@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://time.tianqi.com/" />
+<title>6timepicture</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">6timepicture</td></tr>
+</thead><tbody>
+<!--这是一个做用户自定义扩展的脚本，脚本的作用是对当前网页进行截图监控-->
+<!--将截得的图片以当前时间命名，保存起来。-->
+<!--第一种方法，（为了使两种文件名不冲突，将秒数加一）-->
+<tr>
+	<td>storeEval</td>
+	<td>var time=new Date(Date.now()); (1900+time.getYear())+'_'+(1+time.getMonth())+'_'+time.getDate()+'_'+time.getHours()+'_'+time.getMinutes()+'_'+(time.getSeconds()-1)+'.png'</td>
+	<td>filename</td>
+</tr>
+<tr>
+	<td>captureEntirePageScreenshot</td>
+	<td>C:\Users\Administrator\Desktop\${filename}</td>
+	<td></td>
+</tr>
+<!--第二种方法-->
+<tr>
+	<td>storeEval</td>
+	<td>fileName()</td>
+	<td>filename</td>
+</tr>
+<tr>
+	<td>captureEntirePageScreenshot</td>
+	<td>C:\Users\Administrator\Desktop\${filename}</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

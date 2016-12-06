@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://www.baidu.com/" />
+<title>baidubody</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">baidubody</td></tr>
+</thead><tbody>
+<!--这是一个验证百度页面是否处于登录状态，并获取非登录状态的页面信息的自动化脚本-->
+<!--打开页面，验证是否处于登录状态-->
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>百度一下，你就知道</td>
+	<td></td>
+</tr>
+<!--若处于未登录状态，则获取页面信息-->
+<tr>
+	<td>label</td>
+	<td>IF</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeBodyText</td>
+	<td>baiduBody</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${baiduBody}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>storedVars['baiduBody'].match('登录')</td>
+	<td>exist</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${exist}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>gotoIf</td>
+	<td>storedVars['exist'] == '登录'</td>
+	<td>GET</td>
+</tr>
+<!--处于登录状态，先登出-->
+<tr>
+	<td>click</td>
+	<td>link=退出</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=确定</td>
+	<td></td>
+</tr>
+<tr>
+	<td>goto</td>
+	<td>IF</td>
+	<td></td>
+</tr>
+<!--获取页面信息-->
+<tr>
+	<td>label</td>
+	<td>GET</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>${baiduBody}</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

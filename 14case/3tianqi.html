@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://time.tianqi.com/" />
+<title>时间校准网测试案例</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">时间校准网测试案例</td></tr>
+</thead><tbody>
+<!--这是一个对时间校准网的时间模块的信息验证的自动化脚本（验证2016年）-->
+<!--打开网页-->
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<!--验证页面数据-->
+<tr>
+	<td>assertTitle</td>
+	<td>时间校准_北京时间校准_北京时间在线校准_现在北京时间</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=times</td>
+	<td>???, ?? ??? ???? ??:??:?? GMT</td>
+</tr>
+<!--验证北京时间模块信息-->
+<!--此验证用于2016年，若其他年份使用，请将下一行和下下行中的2016改为相应年份-->
+<tr>
+	<td>verifyText</td>
+	<td>id=times</td>
+	<td>regexp:[MTWFS][ouehra][neduit], [0-3][0-9] [JFMASOND][aepuco][nbrylgptvc] 2016 [0-2][0-9]:[0-5][0-9]:[0-5][0-9] GMT</td>
+</tr>
+<!--验证电脑时间模块信息-->
+<tr>
+	<td>verifyText</td>
+	<td>id=local</td>
+	<td>regexp:2016/[0-9]{1,2}/[0-9]{1,2} [上下]午[0-9]{1,2}:[0-5][0-9]:[0-5][0-9]</td>
+</tr>
+</tbody></table>
+</body>
+</html>
