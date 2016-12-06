@@ -1,0 +1,5 @@
+<testdata>
+	<test name='test_2016_1' pass='123' />
+	<test name='test_2006_2' pass='Passw0rd!' />
+	<test name='test_2016_1' pass='Passw0rd!' />
+</testdata>
